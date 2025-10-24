@@ -1,0 +1,20 @@
+env:
+  MONGO: "true"
+  MONGO_URL: "mongodb://mongodb-dev.devops24.shop:27017/catalogue"
+
+appName: catalogue
+
+service:
+  containerPort: 8080
+  servicePort: 8080
+  type: clusterIP
+
+schema:
+  enabled: true
+  dbExtension: js
+  env:
+    DB_TYPE: mongo
+    APP_GIT_URL: https://github.com/roboshop-devops-project-v3/catalogue
+    DB_HOST: mongodb-dev.devops24.shop
+  container:
+    - master-data

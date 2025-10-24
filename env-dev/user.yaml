@@ -1,0 +1,11 @@
+env:
+  MONGO: "true"
+  MONGO_URL: "mongodb://mongodb-dev.devops24.shop:27017/users"
+  REDIS_URL: "redis://redis-dev.devops24.shop:6379"
+
+appName: user
+
+service:
+  containerPort: 8080
+  servicePort: 8080
+  type: clusterIP

@@ -1,0 +1,24 @@
+env:
+  CART_ENDPOINT: "cart:8080"
+  DB_HOST: mysql-dev.devops24.shop
+
+appName: shipping
+
+service:
+  containerPort: 8080
+  servicePort: 8080
+  type: clusterIP
+
+schema:
+  dbExtension: sql
+  env:
+    DB_TYPE: mysql
+    APP_GIT_URL: https://github.com/roboshop-devops-project-v3/shipping
+    DB_HOST: mysql-ip
+    DB_USER: root
+    DB_PASS: RoboShop@1
+
+  container:
+    - app-user
+    - schema
+    - master-data
