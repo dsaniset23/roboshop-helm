@@ -1,6 +1,6 @@
 env:
   MONGO: "true"
-  MONGO_URL: "mongodb://mongodb-dev.devops24.shop:27017/catalogue"
+  MONGO_URL: "mongodb://mongodb-dev.kdevops23.online:27017/catalogue"
 
 appName: catalogue
 
@@ -15,6 +15,6 @@ schema:
   env:
     DB_TYPE: mongo
     APP_GIT_URL: https://github.com/roboshop-devops-project-v3/catalogue
-    DB_HOST: mongodb-dev.devops24.shop
+    DB_HOST: mongodb-dev.kdevops23.online
   container:
     - master-data

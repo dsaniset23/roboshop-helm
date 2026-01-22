@@ -1,7 +1,7 @@
 env:
   MONGO: "true"
-  MONGO_URL: "mongodb://mongodb-dev.devops24.shop:27017/users"
-  REDIS_URL: "redis://redis-dev.devops24.shop:6379"
+  MONGO_URL: "mongodb://mongodb-dev.kdevops23.online:27017/users"
+  REDIS_URL: "redis://redis-dev.kdevops23.online:6379"
 
 appName: user
 
