@@ -8,19 +8,20 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-{{- include "common.labels" . | indent 6}}
+    {{- include "common.labels" . | indent 6}}
   template:
     metadata:
       labels:
-{{- include "common.labels" . | indent 8}}
+        {{- include "common.labels" . | indent 8}}
     spec:
+      serviceAccountName: { { .Values.appName } }
       containers:
-        - name:  {{ .Values.appName }}
-          image: 572282991444.dkr.ecr.us-east-1.amazonaws.com/roboshop-{{ .Values.appName }}:${{ .Values.appVersion }}
-          ports:
-            - containerPort: {{ .Values.service.containerPort }}
-          env:
-          {{- range $k, $v := .Values.env }}
-            - name: {{ $k }}
-              value: {{ $v | quote}}
-          {{- end }}
+      - name:  {{ .Values.appName }}
+        image: 572282991444.dkr.ecr.us-east-1.amazonaws.com/roboshop-{{ .Values.appName }}:${{ .Values.appVersion }}
+        ports:
+          - containerPort: {{ .Values.service.containerPort }}
+        env:
+        {{- range $k, $v := .Values.env }}
+          - name: {{ $k }}
+            value: {{ $v | quote}}
+        {{- end }}
