@@ -14,7 +14,7 @@ spec:
       labels:
         {{- include "common.labels" . | indent 8}}
     spec:
-      serviceAccountName: { { .Values.appName } }
+      serviceAccountName: {{ .Values.appName }}
       containers:
       - name:  {{ .Values.appName }}
         image: 572282991444.dkr.ecr.us-east-1.amazonaws.com/roboshop-{{ .Values.appName }}:${{ .Values.appVersion }}

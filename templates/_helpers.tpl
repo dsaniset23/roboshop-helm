@@ -1,5 +1,5 @@
 {{- define "common.labels" }}
 appName: {{ .Values.appName }}
 project: "roboshop"
-Release name: {{ .Release.Name }}
+Release-Name: {{ .Release.Name }}
 {{- end }}
