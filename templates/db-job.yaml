@@ -9,16 +9,16 @@ spec:
   template:
     spec:
       containers:
-        - name: {{ $.Values.appName }}-{{ . }}-load
-          image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
+      - name: {{ $.Values.appName }}-{{ . }}-load
+        image: public.ecr.aws/w8x4g9h7/roboshop-v3/schema-load
 
-        - env:
-          {{- range $k, $v := $.Values.schema.env }}
-          - name: {{ $k }}
-            value: {{ $v | quote}}
-          {{- end }}
-        - name: SCHEMA_FILE
-          value: db/{{ . }}.{{ $.Values.schema.dbExtension }}
+      - env:
+        {{- range $k, $v := $.Values.schema.env }}
+        - name: {{ $k }}
+          value: {{ $v | quote}}
+        {{- end }}
+      - name: SCHEMA_FILE
+        value: db/{{ . }}.{{ $.Values.schema.dbExtension }}
       restartPolicy: Never
 {{end}}
 {{end}}
