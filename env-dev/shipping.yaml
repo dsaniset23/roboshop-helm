@@ -7,7 +7,7 @@ appName: shipping
 service:
   containerPort: 8080
   servicePort: 8080
-  type: clusterIP
+  type: ClusterIP
 
 schema:
   dbExtension: sql
